@@ -14,7 +14,7 @@ namespace YGOProDeckWrapper.Library.Services
                 opt.JsonSerializerOptions = new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true,
-                    Converters = { new JsonStringEnumConverter() }
+                    Converters = { new JsonStringEnumMemberConverter() }
                 };
             });
             

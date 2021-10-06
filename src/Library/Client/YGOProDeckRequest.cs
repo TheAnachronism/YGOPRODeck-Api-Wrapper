@@ -6,7 +6,6 @@ namespace YGOProDeckWrapper.Library.Client
 {
     public class YGOProDeckRequest
     {
-        private const string CardInformationEndpoint = "https://db.ygoprodeck.com/api/v7/cardinfo.php";
         private List<string> Names { get; set; } = new();
         private List<string> SearchValues { get; set; } = new();
         private List<int> Ids { get; set; } = new();
