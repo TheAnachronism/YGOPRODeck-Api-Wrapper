@@ -1,7 +1,9 @@
-﻿namespace YGOProDeckWrapper.Library.Client
+﻿using System.Threading.Tasks;
+
+namespace YGOProDeckWrapper.Library.Client
 {
     public interface IYGOProDeckClient
     {
-        
+        Task GetCards(YGOProDeckRequest request);
     }
 }
