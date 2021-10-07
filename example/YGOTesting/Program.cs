@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using YGOProDeckWrapper.Library.Client;
+using YGOProDeckWrapper.Library.Models;
 using YGOProDeckWrapper.Library.Services;
 
 namespace YGOTesting
@@ -15,7 +16,7 @@ namespace YGOTesting
                 .BuildServiceProvider();
 
             var client = services.GetRequiredService<IYGOProDeckClient>();
-            var request = YGOProDeckRequest.CreateRequest().WithName("Solemn Warning");
+            var request = YGOProDeckRequest.CreateRequest().WithSearch("Knight").SortBy(SortTypes.Atk);
             var response = await client.GetCards(request);
         }
     }

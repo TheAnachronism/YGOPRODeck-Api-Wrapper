@@ -43,6 +43,11 @@ namespace YGOProDeckWrapper.Library.Client
                         cards.Add(JsonSerializer.Deserialize<SpellCardResponse>(jsonCardElement.ToString()!, _jsonSerializerOptions));
                         break;
                     }
+                    case CardType.SkillCard:
+                    {
+                        cards.Add(JsonSerializer.Deserialize<SkillCardResponse>(jsonCardElement.ToString()!, _jsonSerializerOptions));
+                        break;
+                    }
                     case CardType.TrapCard:
                     {
                         cards.Add(JsonSerializer.Deserialize<TrapCardResponse>(jsonCardElement.ToString()!, _jsonSerializerOptions));

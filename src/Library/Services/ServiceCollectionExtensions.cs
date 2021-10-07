@@ -1,8 +1,5 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using YGOProDeckWrapper.Library.Client;
-using YGOProDeckWrapper.Library.Converters;
 
 namespace YGOProDeckWrapper.Library.Services
 {
@@ -12,15 +9,7 @@ namespace YGOProDeckWrapper.Library.Services
         {
             services.Configure<YGOProClientJsonSerializerOptions>(opt =>
             {
-                opt.JsonSerializerOptions = new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true,
-                    Converters =
-                    {
-                        new JsonStringEnumMemberConverter(),
-                        new StringDecimalJsonConverter()
-                    }
-                };
+                opt.JsonSerializerOptions = YGOProClientJsonSerializerOptions.DefaultSerializerOptions;
             });
             
             services.AddTransient<IYGOProDeckClient, YGOProDeckClient>();

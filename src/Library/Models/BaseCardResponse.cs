@@ -21,16 +21,24 @@ namespace YGOProDeckWrapper.Library.Models
 
     public class MonsterCardResponse : BaseCardResponse
     {
-        public MonsterRace Race { get; set; }
+        public MonsterCardRace Race { get; set; }
+        public int Atk { get; set; }
+        public int Def { get; set; }
+        public int Level { get; set; }
     }
 
     public class SpellCardResponse : BaseCardResponse
     {
-        public SpellRace Race { get; set; }
+        public SpellCardRace Race { get; set; }
+    }
+
+    public class SkillCardResponse : BaseCardResponse
+    {
+        public SkillCardRace Race { get; set; }
     }
 
     public class TrapCardResponse : BaseCardResponse
     {
-        public TrapRace Race { get; set; }
+        public TrapCardRace Race { get; set; }
     }
 }

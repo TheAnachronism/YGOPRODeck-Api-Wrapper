@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Text.Json;
+using YGOProDeckWrapper.Library.Models;
+using YGOProDeckWrapper.Library.Services;
 
 namespace YGOProDeckWrapper.Library.Client
 {
@@ -9,7 +12,7 @@ namespace YGOProDeckWrapper.Library.Client
         private List<string> Names { get; set; } = new();
         private List<string> SearchValues { get; set; } = new();
         private List<int> Ids { get; set; } = new();
-        private List<string> Types { get; set; } = new();
+        private List<CardType> Types { get; set; } = new();
         private int? Atk { get; set; }
         private int? Def { get; set; }
         private int? Level { get; set; }
@@ -51,7 +54,7 @@ namespace YGOProDeckWrapper.Library.Client
             return this;
         }
 
-        public YGOProDeckRequest WithType(string type)
+        public YGOProDeckRequest WithType(CardType type)
         {
             Types.Add(type);
             return this;
@@ -145,7 +148,10 @@ namespace YGOProDeckWrapper.Library.Client
             if(Ids.Any())
                 query.Add("id", string.Join(",", Ids));
             if(Types.Any())
-                query.Add("type", string.Join(",", Types));
+                query.Add("type",
+                    string.Join(",",
+                        Types.Select(x => JsonSerializer.Serialize(x,
+                            YGOProClientJsonSerializerOptions.DefaultSerializerOptions))));
             if(Atk.HasValue)
                 query.Add("atk", Atk.ToString());
             if(Def.HasValue)

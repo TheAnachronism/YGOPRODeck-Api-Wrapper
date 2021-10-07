@@ -1,18 +1,19 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace YGOProDeckWrapper.Library.Models
 {
-    public enum MonsterRace
+    public enum MonsterCardRace
     {
         Aqua,
         Beast,
-        [JsonPropertyName("beast-warrior")]
+        [EnumMember(Value = "beast-warrior")]
         BeastWarrior,
-        [JsonPropertyName("Creator-god")]
+        [EnumMember(Value = "Creator-god")]
         CreatorGod,
         Cyberse,
         Dinosaur,
-        [JsonPropertyName("divine beast")]
+        [EnumMember(Value = "divine beast")]
         DivineBeast,
         Dragon,
         Fairy,
@@ -25,27 +26,70 @@ namespace YGOProDeckWrapper.Library.Models
         Pyro,
         Reptile,
         Rock,
-        [JsonPropertyName("sea serpent")]
+        [EnumMember(Value = "sea serpent")]
         SeaSerpent,
         SpellCaster,
         Thunder,
         Warrior,
-        [JsonPropertyName("winged beast")]
-        WingedBeast
+        [EnumMember(Value = "winged beast")]
+        WingedBeast,
+        Wyrm,
+        Zombie
     }
 
-    public enum SpellRace
+    public enum SpellCardRace
     {
         Normal,
         Field,
         Equip,
         Continuous,
-        [JsonPropertyName("Quick-Play")]
+        [EnumMember(Value = "Quick-Play")]
         QuickPlay,
         Ritual
     }
 
-    public enum TrapRace
+    public enum SkillCardRace
+    {
+        Andrew,
+        Arkana,
+        Bonz,
+        Christine,
+        David,
+        Emma,
+        [EnumMember(Value = "Espa Roba")]
+        EspaRoba,
+        Ishizu,
+        [EnumMember(Value = "Ishizu Ishtar")]
+        IshizuIshtar,
+        Joey,
+        [EnumMember(Value = "Joey Wheeler")]
+        JoeyWheeler,
+        Kaiba,
+        Keith,
+        [EnumMember(Value = "Lumis Umbra")]
+        LumisUmbra,
+        Mai,
+        [EnumMember(Value = "Mai Valentine")]
+        MaiValentine,
+        Mako,
+        Odion,
+        Pegasus,
+        Rex,
+        [EnumMember(Value = "Seto Kaiba")]
+        SetoKaiba,
+        [EnumMember(Value = "Tea Gardner")]
+        TeaGardner,
+        Weevil,
+        [EnumMember(Value = "Yami Bakura")]
+        YamiBakura,
+        [EnumMember(Value = "Yami Marik")]
+        YamiMarik,
+        [EnumMember(Value = "Yami Yugi")]
+        YamiYugi,
+        Yugi
+    }
+    
+    public enum TrapCardRace
     {
         Normal,
         Continuous,
