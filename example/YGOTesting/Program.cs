@@ -16,8 +16,7 @@ namespace YGOTesting
                 .BuildServiceProvider();
 
             var client = services.GetRequiredService<IYGOProDeckClient>();
-            var request = YGOProDeckRequest.CreateRequest().WithSearch("Knight").SortBy(SortTypes.Atk);
-            var response = await client.GetCards(request);
+            var response = await client.GetCardSetsAsync();
         }
     }
 }

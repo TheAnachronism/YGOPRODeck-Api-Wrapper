@@ -2,7 +2,7 @@
 
 namespace YGOProDeckWrapper.Library.Models
 {
-    public class CardSetResponse
+    public class SetCardResponse
     {
         [JsonPropertyName("set_name")]
         public string SetName { get; set; }

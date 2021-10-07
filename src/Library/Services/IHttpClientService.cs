@@ -29,7 +29,10 @@ namespace YGOProDeckWrapper.Library.Services
 
             var content = await response.Content.ReadAsStringAsync();
             var document = JsonDocument.Parse(content);
-            return document.RootElement.GetProperty("data").ToString();
+            return document.RootElement.ValueKind == JsonValueKind.Array
+                ? content
+                : document.RootElement.GetProperty("data")
+                    .ToString();
         }
     }
     

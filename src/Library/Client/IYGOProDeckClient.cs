@@ -6,6 +6,7 @@ namespace YGOProDeckWrapper.Library.Client
 {
     public interface IYGOProDeckClient
     {
-        Task<List<BaseCardResponse>> GetCards(YGOProDeckRequest request);
+        Task<IEnumerable<BaseCardResponse>> GetCardsAsync(YGOProDeckRequest request);
+        Task<IEnumerable<SetResponse>> GetCardSetsAsync();
     }
 }

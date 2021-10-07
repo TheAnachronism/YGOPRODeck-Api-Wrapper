@@ -14,6 +14,7 @@ namespace YGOProDeckWrapper.Library.Client
     internal class YGOProDeckClient : IYGOProDeckClient
     {
         private const string CardInformationEndpoint = "https://db.ygoprodeck.com/api/v7/cardinfo.php";
+        private const string CardSetsEndpoint = "https://db.ygoprodeck.com/api/v7/cardsets.php";
         
         private readonly IHttpClientService _httpClientService;
         private readonly JsonSerializerOptions _jsonSerializerOptions;
@@ -24,7 +25,7 @@ namespace YGOProDeckWrapper.Library.Client
             _jsonSerializerOptions = jsonOptions?.Value?.JsonSerializerOptions ?? throw new ArgumentNullException(nameof(jsonOptions));
         }
         
-        public async Task<List<BaseCardResponse>> GetCards(YGOProDeckRequest request)
+        public async Task<IEnumerable<BaseCardResponse>> GetCardsAsync(YGOProDeckRequest request)
         {
             var query = CardInformationEndpoint + ToQueryString(request.BuildRequest());
             var response = await _httpClientService.GetAsync(query);
@@ -63,7 +64,13 @@ namespace YGOProDeckWrapper.Library.Client
 
             return cards;
         }
-        
+
+        public async Task<IEnumerable<SetResponse>> GetCardSetsAsync()
+        {
+            var response = await _httpClientService.GetAsync(CardSetsEndpoint);
+            return JsonSerializer.Deserialize<IEnumerable<SetResponse>>(response);
+        }
+
         private static string ToQueryString(NameValueCollection nvc)
         {
             var array = (

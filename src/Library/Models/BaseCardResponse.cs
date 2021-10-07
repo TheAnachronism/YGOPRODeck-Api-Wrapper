@@ -12,7 +12,7 @@ namespace YGOProDeckWrapper.Library.Models
         public string Description { get; set; }
         public string Archetype { get; set; }
         [JsonPropertyName("card_sets")]
-        public List<CardSetResponse> Sets { get; set; }
+        public List<SetCardResponse> Sets { get; set; }
         [JsonPropertyName("card_images")]
         public List<CardImageResponse> Images { get; set; }
         [JsonPropertyName("card_prices")]
