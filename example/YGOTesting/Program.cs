@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using YGOProDeckWrapper.Library.Client;
 using YGOProDeckWrapper.Library.Services;
@@ -16,7 +15,7 @@ namespace YGOTesting
                 .BuildServiceProvider();
 
             var client = services.GetRequiredService<IYGOProDeckClient>();
-            var request = YGOProDeckRequest.CreateRequest().WithName("Apoqliphort Towers");
+            var request = YGOProDeckRequest.CreateRequest().WithName("Solemn Warning");
             var response = await client.GetCards(request);
         }
     }

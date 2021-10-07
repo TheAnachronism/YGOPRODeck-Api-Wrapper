@@ -34,8 +34,8 @@ namespace YGOProDeckWrapper.Library.Client
             
             foreach (var jsonCardElement in array.RootElement.EnumerateArray())
             {
-                var typeString = jsonCardElement.GetProperty("type").GetString();
-                var type = Enum.Parse<CardType>(typeString!.Replace(" ", string.Empty));
+                var typeString = $"\"{jsonCardElement.GetProperty("type").ToString()}\"";
+                var type = JsonSerializer.Deserialize<CardType>(typeString!, _jsonSerializerOptions);
                 switch (type)
                 {
                     case CardType.SpellCard:

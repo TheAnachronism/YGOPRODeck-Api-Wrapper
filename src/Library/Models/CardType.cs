@@ -1,65 +1,66 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace YGOProDeckWrapper.Library.Models
 {
     [JsonConverter(typeof(JsonStringEnumMemberConverter))]
     public enum CardType
     {
-        [JsonPropertyName("Skill Card")]
+        [EnumMember(Value = "Skill Card")]
         SkillCard,
-        [JsonPropertyName("Spell Card")]
+        [EnumMember(Value = "Spell Card")]
         SpellCard,
-        [JsonPropertyName("Trap Card")]
+        [EnumMember(Value = "Trap Card")]
         TrapCard,
-        [JsonPropertyName("Normal Monster")]
+        [EnumMember(Value = "Normal Monster")]
         NormalMonster,
-        [JsonPropertyName("Normal Tuner Monster")]
+        [EnumMember(Value = "Normal Tuner Monster")]
         NormalTunerMonster,
-        [JsonPropertyName("Effect Monster")]
+        [EnumMember(Value = "Effect Monster")]
         EffectMonster,
-        [JsonPropertyName("Tuner Monster")]
+        [EnumMember(Value = "Tuner Monster")]
         TunerMonster,
-        [JsonPropertyName("Flip Monster")]
+        [EnumMember(Value = "Flip Monster")]
         FlipMonster,
-        [JsonPropertyName("Flip Effect Monster")]
+        [EnumMember(Value = "Flip Effect Monster")]
         FlipEffectMonster,
-        [JsonPropertyName("Flip Tuner Effect Monster")]
+        [EnumMember(Value = "Flip Tuner Effect Monster")]
         FlipTunerEffectMonster,
-        [JsonPropertyName("Spirit Monster")]
+        [EnumMember(Value = "Spirit Monster")]
         SpiritMonster,
-        [JsonPropertyName("Union Effect Monster")]
+        [EnumMember(Value = "Union Effect Monster")]
         UnionEffectMonster,
-        [JsonPropertyName("Gemini Monster")]
+        [EnumMember(Value = "Gemini Monster")]
         GeminiMonster,
-        [JsonPropertyName("Pendulum Effect Monster")]
+        [EnumMember(Value = "Pendulum Effect Monster")]
         PendulumEffectMonster,
-        [JsonPropertyName("Pendulum Normal Monster")]
+        [EnumMember(Value = "Pendulum Normal Monster")]
         PendulumNormalMonster,
-        [JsonPropertyName("Pendulum Tuner Effect Monster")]
+        [EnumMember(Value = "Pendulum Tuner Effect Monster")]
         PendulumTunerEffectMonster,
-        [JsonPropertyName("Ritual Monster")]
+        [EnumMember(Value = "Ritual Monster")]
         RitualMonster,
-        [JsonPropertyName("Ritual Effect Monster")]
+        [EnumMember(Value = "Ritual Effect Monster")]
         RitualEffectMonster,
-        [JsonPropertyName("Toon Monster")]
+        [EnumMember(Value = "Toon Monster")]
         ToonMonster,
-        [JsonPropertyName("Fusion Monster")]
+        [EnumMember(Value = "Fusion Monster")]
         FusionMonster,
-        [JsonPropertyName("Synchro Monster")]
+        [EnumMember(Value = "Synchro Monster")]
         SynchroMonster,
-        [JsonPropertyName("Synchro Tuner Monster")]
+        [EnumMember(Value = "Synchro Tuner Monster")]
         SynchroTunerMonster,
-        [JsonPropertyName("Synchro Pendulum Effect Monster")]
+        [EnumMember(Value = "Synchro Pendulum Effect Monster")]
         SynchroPendulumEffectMonster,
-        [JsonPropertyName("XYZ Monster")]
+        [EnumMember(Value = "XYZ Monster")]
         XYZMonster,
-        [JsonPropertyName("XYZ Pendulum Effect Monster")]
+        [EnumMember(Value = "XYZ Pendulum Effect Monster")]
         XYZPendulumEffectMonster,
-        [JsonPropertyName("Link Monster")]
+        [EnumMember(Value = "Link Monster")]
         LinkMonster,
-        [JsonPropertyName("Pendulum Flip Effect Monster")]
+        [EnumMember(Value = "Pendulum Flip Effect Monster")]
         PendulumFlipEffectMonster,
-        [JsonPropertyName("Pendulum Effect Fusion Monster")]
+        [EnumMember(Value = "Pendulum Effect Fusion Monster")]
         PendulumEffectFusionMonster,
         Token
     }
