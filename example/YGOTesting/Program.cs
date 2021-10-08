@@ -16,7 +16,7 @@ namespace YGOTesting
                 .BuildServiceProvider();
 
             var client = services.GetRequiredService<IYGOProDeckClient>();
-            var response = await client.GetCardSetsAsync();
+            var response = await client.GetCardSetInfoAsync("LCKC-EN088");
         }
     }
 }
