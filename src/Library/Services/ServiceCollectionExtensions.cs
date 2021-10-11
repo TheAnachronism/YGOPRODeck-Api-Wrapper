@@ -13,7 +13,7 @@ namespace YGOProDeckWrapper.Library.Services
             });
             
             services.AddTransient<IYGOProDeckClient, YGOProDeckClient>();
-            services.AddHttpClient<IHttpClientService, HttpClientService>();
+            services.AddHttpClient<IYGOProHttpClientService, YGOProHttpClientService>();
             return services;
         }
     }

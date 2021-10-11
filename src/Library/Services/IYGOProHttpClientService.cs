@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace YGOProDeckWrapper.Library.Services
 {
-    public interface IHttpClientService
+    public interface IYGOProHttpClientService
     {
         Task<string> GetAsync(string url, CancellationToken cancellationToken = default);
     }
 
-    internal class HttpClientService : IHttpClientService
+    internal class YGOProHttpClientService : IYGOProHttpClientService
     {
         private readonly HttpClient _httpClient;
 
-        public HttpClientService(HttpClient httpClient)
+        public YGOProHttpClientService(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }

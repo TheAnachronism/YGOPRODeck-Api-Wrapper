@@ -19,10 +19,10 @@ namespace YGOProDeckWrapper.Library.Client
         private const string CardSetInfoEndpoint = "https://db.ygoprodeck.com/api/v7/cardsetsinfo.php";
         private const string CardArchetypeEndpoint = "https://db.ygoprodeck.com/api/v7/archetypes.php";
 
-        private readonly IHttpClientService _httpClientService;
+        private readonly IYGOProHttpClientService _httpClientService;
         private readonly JsonSerializerOptions _jsonSerializerOptions;
 
-        public YGOProDeckClient(IHttpClientService httpClientService,
+        public YGOProDeckClient(IYGOProHttpClientService httpClientService,
             IOptions<YGOProClientJsonSerializerOptions> jsonOptions)
         {
             _httpClientService = httpClientService;
