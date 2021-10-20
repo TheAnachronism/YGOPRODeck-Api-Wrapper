@@ -13,7 +13,7 @@ namespace YGOProDeckWrapper.Library.Models
         CreatorGod,
         Cyberse,
         Dinosaur,
-        [EnumMember(Value = "divine beast")]
+        [EnumMember(Value = "divine-beast")]
         DivineBeast,
         Dragon,
         Fairy,
