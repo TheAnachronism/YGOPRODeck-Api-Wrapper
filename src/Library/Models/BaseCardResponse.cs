@@ -22,9 +22,21 @@ namespace YGOProDeckWrapper.Library.Models
     public class MonsterCardResponse : BaseCardResponse
     {
         public MonsterCardRace Race { get; set; }
+        public MonsterAttribute Attribute { get; set; }
         public int Atk { get; set; }
         public int Def { get; set; }
         public int Level { get; set; }
+    }
+
+    public enum MonsterAttribute
+    {
+        Dark,
+        Divine,
+        Earth,
+        Fire,
+        Light,
+        Water,
+        Wind
     }
 
     public class SpellCardResponse : BaseCardResponse
